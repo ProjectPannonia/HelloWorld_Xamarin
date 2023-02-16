@@ -15,14 +15,13 @@ namespace HelloWorld_Xamarin
         public GreetPage()
         {
             InitializeComponent();
-            Content = new Label
-            {
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center,
-                Text = "Hello World"
-            };
+            slider.Value = 0.5;
+            //label.Text = String.Format("Value is {0:F2}", slider.Value);
         }
 
-        
+        void Handle_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            label.Text = String.Format("Value is {0:F2}", e.NewValue);
+        }
     }
 }
