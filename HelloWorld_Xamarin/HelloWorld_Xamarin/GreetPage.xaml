@@ -3,12 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HelloWorld_Xamarin.GreetPage">
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <!-- Advanced/cleaner binding -->
+        <Label BindingContext="{x:Reference slider}"
+               Text="{Binding Value,
+               StringFormat='Value is {0:F2}' }"
+               Opacity="{Binding Value}"
+               />
+        <!-- Normal binding
         <Label Text="{Binding 
                Source={x:Reference slider},
                Path=Value, 
-               StringFormat='Value is {0:F2}'
-               }" 
+               StringFormat='Value is {0:F2}'}" 
+               Opacity="{Binding 
+                         Source={x:Reference slider},
+                         Path=Value }"
                x:Name="label"/>
+        -->
         <!-- ValueChanged="Handle_ValueChanged" -->
         <Slider  x:Name="slider"/>
     </StackLayout>
