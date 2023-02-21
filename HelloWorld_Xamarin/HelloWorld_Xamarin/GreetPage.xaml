@@ -28,7 +28,7 @@
                x:Name="label"
                />
         -->
-        
+
         <!-- Normal binding
         <Label Text="{Binding 
                Source={x:Reference slider},
