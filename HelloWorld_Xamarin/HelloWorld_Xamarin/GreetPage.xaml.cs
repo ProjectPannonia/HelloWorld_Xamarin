@@ -20,7 +20,23 @@ namespace HelloWorld_Xamarin
             else if (Device.OS == TargetPlatform.WinPhone)
                 Padding = new Thickness(30, 20, 0, 0);
             */
-            /* Target device handler - new, easier way */
+            /* Target device handler - cleaner way 
+            Padding = Device.OnPlatform<Thickness>(
+                iOS: new Thickness(0, 20, 0, 0),
+                Android: new Thickness(10, 20, 0, 0),
+                WinPhone: new Thickness(30, 20, 0, 0)
+            );
+            */
+            /* Target device handler - with lamda expression */
+            Device.OnPlatform(
+                iOS: () =>
+                {
+                    Padding = new Thickness(0, 20, 0, 0);
+                },
+                Android: () =>
+                {
+                    //...
+                });
             //label.Text = String.Format("Value is {0:F2}", slider.Value);
         }
 
