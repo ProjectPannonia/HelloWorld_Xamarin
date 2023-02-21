@@ -7,10 +7,14 @@ namespace HelloWorld_Xamarin
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GreetPage : ContentPage
     {
+        [Obsolete]
         public GreetPage()
         {
             InitializeComponent();
             slider.Value = 0.5;
+
+
+
 
             /* Target device handler - old way
             if (Device.OS == TargetPlatform.iOS)
@@ -26,9 +30,14 @@ namespace HelloWorld_Xamarin
                 Android: new Thickness(10, 20, 0, 0),
                 WinPhone: new Thickness(30, 20, 0, 0)
             );
+
+
+
+
+
             */
             /* Target device handler - with lamda expression */
-            Device.OnPlatform(
+            /*Device.OnPlatform(
                 iOS: () =>
                 {
                     Padding = new Thickness(0, 20, 0, 0);
@@ -37,6 +46,16 @@ namespace HelloWorld_Xamarin
                 {
                     //...
                 });
+            */
+
+
+            var x = new OnPlatform<Thickness>
+            {
+                Android = new Thickness(0),
+                iOS =  new Thickness(0, 20, 0, 0)
+            };
+            Padding = x;
+
             //label.Text = String.Format("Value is {0:F2}", slider.Value);
         }
 
