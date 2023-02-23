@@ -48,14 +48,14 @@ namespace HelloWorld_Xamarin
                 });
             */
 
-
+            /*
             var x = new OnPlatform<Thickness>
             {
                 Android = new Thickness(0),
                 iOS =  new Thickness(0, 20, 0, 0)
             };
             Padding = x;
-
+            */
             //label.Text = String.Format("Value is {0:F2}", slider.Value);
         }
 
