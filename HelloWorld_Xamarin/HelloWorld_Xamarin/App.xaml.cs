@@ -10,7 +10,7 @@ namespace HelloWorld_Xamarin
         {
             InitializeComponent();
 
-            MainPage = new StackPage();
+            MainPage = new GridPage();
         }
 
         protected override void OnStart()
