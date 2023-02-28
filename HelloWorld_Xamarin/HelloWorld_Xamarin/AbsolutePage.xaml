@@ -1,12 +1,25 @@
-﻿ <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HelloWorld_Xamarin.AbsolutePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             Padding="0,20,2,0"
+             xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="HelloWorld_Xamarin.AbsolutePage">
+    <AbsoluteLayout>
+        <!-- 
+            AbsoluteLayout.LayoutBounds="0, 0, 100, 100" -> meaning: absolute values  -> (x,y,width,height) 
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"-> meaining: proposal(dynamic) values -> "None", 
+                                                                                                                              "All", 
+                                                                                                                              "WidthProportional", 
+                                                                                                                              "HeightProportional", 
+                                                                                                                              "XProportional", 
+                                                                                                                              "YProportional", 
+                                                                                                                              "PositionProportional",
+                                                                                                                              "SizeProportional"
+            
+        -->
+        <BoxView Color="Aqua"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
+        <BoxView Color="White" 
+                 AbsoluteLayout.LayoutBounds="0.5, 0.1, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <Button Text="Get Started" BackgroundColor="Silver" TextColor="White" 
+                AbsoluteLayout.LayoutBounds="0, 1, 1, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+    </AbsoluteLayout>
 </ContentPage>
